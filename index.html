@@ -6,32 +6,39 @@
         .myHeading {
           color: red;
         }
+        button {
+            width: 150px;
+            background-color:bisque;
+            margin-top: 10px;
+            
+        }
       </style>
     </head>
     <body>
       <div>
-        <h1>This is the title of the page</h1>
+        <h1 onclick="addClassToTitle()">This is the title of the page</h1>
         <h2>This is the subtitle of the page</h2>
       </div>
   
       <div>
         <hr />
   
-        <ul id="firstList">
+        <ul id="firstList" onclick="firstUlDisappear()">
           <li>1st</li>
           <li>2nd</li>
           <li>3rd</li>
         </ul>
-  
+        <button onclick="addToTheSecond()">New Item</button>
         <ul id="secondList">
           <li>1st</li>
           <li>2nd</li>
           <li>3rd</li>
         </ul>
-  
+        <button onclick="changeUrls()">Change Link</button>
         <a href="strive.school">This link goes to Strive School</a>
   
-        <div>
+        <div class="firstContainer" onclick="addParagraph()">
+            <button onclick="changePcontent()">Change P Text</button>
           <p>This text is just for the exercise</p>
         </div>
   
@@ -57,39 +64,50 @@
         */
   
         const changeTitle = function (newTitle) {
-          //
-        };
+          let newTextNode = document.getElementsByTagName('h1')[0]
+          newTextNode.innerText = "Inputs and Events"
+          
+        }
   
         /* EXERCISE 2
          Write a function for changing the class of the title of the page in "myHeading".
         */
   
         const addClassToTitle = function () {
-          //
-        };
+            let newClassNode = document.getElementsByTagName('h1')[0]
+            newClassNode.classList.add('myHeading')          
+            changeTitle()
+
+        }
   
         /* EXERCISE 3
          Write a function for changing the text of only the p which are children of a div.
         */
   
         const changePcontent = function () {
-          //
-        };
+          newPTextNodes = document.getElementsByTagName('p')
+          for (i=0; i<newPText.lenght; i++){
+              newPTextNodes[i].innerText = "This is the new text in P"
+          }
+        }
   
         /* EXERCISE 4
          Write a function for changing the href property of every link to https://www.google.com
         */
   
         const changeUrls = function () {
-          //
-        };
+          newUrlNode = document.getElementsByTagName('a')[0].href="https://www.google.com"
+        }
   
         /* EXERCISE 5
          Write a function for adding a new list item in the second unordered list.
         */
   
         const addToTheSecond = function (content) {
-          //
+            newLiNode = document.createElement('li')
+            newLiNode.innerText = "4th"
+          newListItemNode = document.getElementById('secondList')
+          newListItemNode.appendChild(newLiNode)
         };
   
         /* EXERCISE 6
@@ -97,16 +115,20 @@
         */
   
         const addParagraph = function (content) {
-          //
-        };
+          newParagraphNode = document.createElement('p')
+          newParagraphNode.innerHTML = "This the new Paragraph"
+          newPTagNode = document.getElementsByTagName('div')[2]
+          newPTagNode.append(newParagraphNode)
+        }
   
         /* EXERCISE 7
          Write a function for making the first unordered list disappear.
         */
   
         const firstUlDisappear = function () {
-          //
-        };
+          ulHideNode = document.getElementById('firstList')
+          ulHideNode.style.display = 'none'
+        }
   
         /* EXERCISE 8
          Write a function for making the background of every unordered list green.
