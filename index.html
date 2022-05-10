@@ -25,7 +25,7 @@
   
       <div>
         <hr />
-        <button onclick="paintItGreen()">Change Background</button>
+        <button onclick="paintItGreen()">Paint Background</button>
         <ul id="firstList" onclick="firstUlDisappear()">
           <li>1st</li>
           <li>2nd</li>
@@ -56,7 +56,7 @@
   
       <div>
         <p>And this text is just for the exercise too!</p>
-        <h2 style="color: red">
+        <h2 id="footerText" style="color: red" onclick="changeFooterText()">
           Save this page on your computer and open it with VSCode to get the
           questions!
         </h2>
@@ -89,7 +89,7 @@
   
         const changePcontent = function () {
           newPTextNodes = document.getElementsByTagName('p')
-          for (i=0; i<newPText.lenght; i++){
+          for (let i=0; i<newPTextNodes.length; i++){
               newPTextNodes[i].innerText = "This is the new text in P"
           }
         }
@@ -138,9 +138,10 @@
         */
   
         const paintItGreen = function () {
-            ulBackgroundNode = document.getElementsByTagName('ul')
-            for(i=0; i<ulBackgroundNode.lenght; i++){
-                ulBackgroundNode[i].classList.add('ulBg')
+            ulBackgroundNode = document.querySelectorAll('ul')
+            console.log(ulBackgroundNode)
+            for(let i=0; i<ulBackgroundNode.length; i++){
+            ulBackgroundNode[i].classList.add('ulBg')
             }
         }
   
@@ -157,8 +158,9 @@
         */
   
         const changeFooterText = function () {
-          //
-        };
+          footerTextNode = document.getElementById('footerText')
+            footerTextNode.innerText = "Saved to Computer"
+        }
   
         /* EXERCISE 11
          Attach an event listener to the input field in the page for console logging its value just after any keystroke.
@@ -172,7 +174,7 @@
         */
   
         window.onload = function () {
-          //
+          alert('Hello, Best wishes for the Challenge')
         };
   
         /* EXERCISE 13
