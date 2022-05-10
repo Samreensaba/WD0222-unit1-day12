@@ -12,6 +12,9 @@
             margin-top: 10px;
             
         }
+        .ulBg {
+            background-color: green;
+        }
       </style>
     </head>
     <body>
@@ -22,7 +25,7 @@
   
       <div>
         <hr />
-  
+        <button onclick="paintItGreen()">Change Background</button>
         <ul id="firstList" onclick="firstUlDisappear()">
           <li>1st</li>
           <li>2nd</li>
@@ -135,15 +138,18 @@
         */
   
         const paintItGreen = function () {
-          //
-        };
+            ulBackgroundNode = document.getElementsByTagName('ul')
+            for(i=0; i<ulBackgroundNode.lenght; i++){
+                ulBackgroundNode[i].classList.add('ulBg')
+            }
+        }
   
         /* EXERCISE 9
          Make the heading of the page change color every time the user clicks on it.
         */
   
         const makeItClickable = function () {
-          //
+          
         };
   
         /* EXERCISE 10
